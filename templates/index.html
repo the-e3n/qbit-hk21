@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+Home | Q-Bit Hackathon
+{% endblock %}
+
+{% block css %}
+  <style>
+      #form2{
+        display: none;
+      }
+  </style>
+{% endblock css %}
+
+
+{% block body %}
+    {% comment %} <img src="{{mapsrc}}" alt="Map"> {% endcomment %}
+    <form method="POST" id="form1" action="#">
+        {% csrf_token %}  
+        Van Number : <input type="number" name="vanNumber" id="vanNumber" required>
+        <br>
+        Area Number : <input type="number" name="areaNumber" id="areaNumber" required>
+        <br>
+        Number Doses in 1 Round : <input type="number" name="doseNumber" id="doseNumber" required>
+        <br>
+        Manual Data : <input type="checkbox" name="manual_data" id="manual_data">
+        <br>
+        <input type="submit" value="Next">
+    </form>
+
+    
+{% endblock %}
+
+
+{% block script %}
+<script>
+    
+</script>
+
+
+{% endblock %}

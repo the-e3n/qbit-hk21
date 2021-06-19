@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load new_tags %}
+{% block title %}
+Final
+{% endblock %}
+
+{% block body %}
+    <h1>Round {{ request.session.round }}</h1>
+<table>
+<tr>
+    <th>Area No.</th>
+    <th>People Vacinated in this round</th>
+    <th>Remaining Registered People in this area</th>
+    <th>Available No. of doses per day  in this area</th>
+    <th>Wastage</th>
+</tr>
+    {% for i in range %}
+<tr>
+    <td>{{ i }}</td>
+    <td>{{ request.session.remaining|index:i}}</td>
+    <td>{{ request.session.areas|index:i }}</td>
+    <td>{{ request.session.doses|index:i }}</td>
+    <td>{{ request.session.wastage|index:i }}</td>
+</tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

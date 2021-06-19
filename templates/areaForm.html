@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Area Form
+{% endblock %}
+
+{% block body %}
+    <form action="#" method="post">
+    {% csrf_token %}
+    {% for i in range %}
+        Area{{i}}:<input type="number" name="area{{i}}" id="area{{i}}">
+        <br>
+    {% endfor %}
+        <input type="submit" value="Next">
+    </form>
+
+{% endblock %}

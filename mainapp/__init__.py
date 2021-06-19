@@ -1,0 +1,1 @@
+BING_API = 'ApyTtt1xXOrcmjOEFcOx-UpSBBUJAyyIWsjAc9J0Y8cgOaN1bqyO54z-s__GeI9c'
