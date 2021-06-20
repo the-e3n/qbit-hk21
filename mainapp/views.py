@@ -54,6 +54,8 @@ def update_data(request):
         for i in range(request.session['areaNumber']):
             request.session['areas'][i] += int(request.POST[f'area{i}'])
             request.session['doses'][i] += int(request.POST[f'dose{i}'])
+            if request.POST[f'dose{i}'] != 0:
+                request.session['count'][i] = 0
             request.session.modified = True
         return redirect('final')
     context['range'] = list(range(request.session['areaNumber']))

@@ -11,8 +11,9 @@ def solution(request):
                 print('zero ', i)
                 continue
             if request.session['count'][i] == 1:
-                request.session['wastage'][i] = request.session['doseNumber'] - request.session['areas'][i]
+                request.session['wastage'][i] += request.session['doseNumber'] - request.session['areas'][i]
                 request.session['areas'][i] = 0
+                request.session.modified = True
                 continue
             if request.session['areas'][i] <= request.session['doseNumber']:
                 request.session['count'][i] += 1
