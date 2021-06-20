@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block body %}
+ 
+  <div class="about-section">
+  <h1>About Us</h1>
+  <p>If you have any queries related to our website or Vaccination, feel free to contact us.</p>
+</div>
+
+<div class="about">
+<h2 style="text-align:center;color: white">Our Team</h2>
+<div class="row">
+    <div class="column">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.NVzyYLEb8HIM6I58N9WXdQHaHa?w=190&h=190&c=7&o=5&dpr=1.25&pid=1.7" alt="yb" style="max-width:100%">
+      <div class="container">
+        <h2>Awwal Siwach</h2>
+        <p class="title">Coder</p>
+        <a href="mailto: awwalsiwach12345@gmail.com" style="text-decoration: none;">awwalsiwach12345@gmail.com</a>
+        <p>Maharshi Dayanand University</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.q8awvukID2OfRwwytZbazwHaHa?w=212&h=212&c=7&o=5&dpr=1.25&pid=1.7" alt="tg" style="max-width:100%">
+      <div class="container">
+        <h2>Sagar</h2>
+        <p class="title">Full-Stack Developer</p>
+        <a href="mailto: ss722980@gmail.com" style="text-decoration: none">ss722980@gmail.com</a>
+        <p>Maharshi Dayanand University</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.GQXhnNxBoBgNq6oweXLshQHaHa?w=206&h=206&c=7&o=5&dpr=1.25&pid=1.7" alt="ca" style="max-width:100%">
+      <div class="container">
+        <h2>Cheshta Arora</h2>
+        <p class="title">Coder</p>
+        <p>cheshta.arora2002@gmail.com</p>
+        <p>Chitkara University</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.iTAKmTDXxJSnCc_hg5leTAHaHa?w=205&h=206&c=7&o=5&dpr=1.25&pid=1.7" alt="hs" style="max-width:100%">
+      <div class="container">
+        <h2>Mansha Aggarwal</h2>
+        <p class="title">Coder</p>
+        <p>hitika1153@chitkara.edu.in</p>
+        <p>Chitkara University</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}
+    
+     

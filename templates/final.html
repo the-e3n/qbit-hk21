@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load new_tags %}
 {% block title %}
 Final
 {% endblock %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <style>
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
@@ -148,6 +150,8 @@ Final
 {% endblock %}
 
 {% block body %}
+    <main class="container-fluid my-5">
+
     <h1><span class="blue">&lt;</span>Day<span class="blue">&gt;</span> <span class="yellow">{{ request.session.round }}</span></h1>
 
 
@@ -172,14 +176,15 @@ Final
 </tr>
     {% endfor %}
      <tr>
-         <th><h1></h1></th>
+         <th><h1> </h1></th>
+         <th><h1></h1>Total Poulation: {{ request.session.total_people }}</th>
          <th><h1><a href="{% url 'final' %}" class="first btn">Next</a></h1></th>
          <th><h1><a href="{% url 'update_data' %}" class="first btn">Enter manual data</a></h1></th>
-         <th><h1> </h1></th>
          <th><h1>Total Wastage: {{ request.session.total_waste }}</h1></th>
     </tr>
         </tbody>
     </table>
 
+    </main>
 
 {% endblock %}

@@ -32,9 +32,14 @@ class Home(View):
         if request.session['manual_data']:
             return redirect('areaForm')
         for i in range(request.session['areaNumber']):
-            request.session['areas'][i] = randrange(1, 200)
+            request.session['areas'][i] = randrange(1, 500)
             request.session['doses'][i] = randrange(1, 10) * request.session['doseNumber']
+        request.session['total_people'] = sum(request.session['areas'])
         return redirect('final')
+
+
+def about(request):
+    return render(request, 'about.html')
 
 
 def areaForm(request):
@@ -45,6 +50,7 @@ def areaForm(request):
             request.session.modified = True
         return redirect('doseForm')
     context['range'] = list(range(request.session['areaNumber']))
+    request.session['total_people'] = sum(request.session['areas'])
     return render(request, 'areaForm.html', context)
 
 
@@ -59,6 +65,7 @@ def update_data(request):
             request.session.modified = True
         return redirect('final')
     context['range'] = list(range(request.session['areaNumber']))
+    request.session['total_people'] = sum(request.session['areas'])
     return render(request, 'updateForm.html', context)
 
 
@@ -77,6 +84,7 @@ class Final(View):
     @staticmethod
     def get(request):
         context = {}
+
         context['total_waste'] = solution(request)
         # for i in range(request.session['areaNumber']):
         #     request.session['doses'][i] += randrange(0, 2) * request.session['doseNumber']

@@ -1,40 +1,80 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 Home | Q-Bit Hackathon
 {% endblock %}
 
 {% block css %}
-  <style>
-      #form2{
-        display: none;
-      }
-  </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
 {% endblock css %}
 
 
 {% block body %}
-    {% comment %} <img src="{{mapsrc}}" alt="Map"> {% endcomment %}
-    <form method="POST" id="form1" action="#">
-        {% csrf_token %}  
-        Van Number : <input type="number" name="vanNumber" id="vanNumber" required>
-        <br>
-        Area Number : <input type="number" name="areaNumber" id="areaNumber" required>
-        <br>
-        Number Doses in 1 Round : <input type="number" name="doseNumber" id="doseNumber" required>
-        <br>
-        Manual Data : <input type="checkbox" name="manual_data" id="manual_data">
-        <br>
-        <input type="submit" value="Next">
-    </form>
+<header>
+
+<div class="main">
+        <div class="main-left">
+          <div class="text">
+            <span>Let's Help </span> <br>
+            <span>Earth To Recover</span><br>
+            <span style="color: yellow;">Stay Home!</span>
+            <p>
+                Coronoviruses (CoV) are a large family of viruses
+                that <br> cause illness  ranging from the
+                common cold to more severe diseases <br> such as MERS-Cov and SARS-Cov
+            </p>
+              <br>
+            <a href="https://en.wikipedia.org/wiki/COVID-19" class="btn first" id="external-link">Learn More</a>
+          </div>
+        </div>
+        <div class="main-right">
+          <img
+            class="img-v"
+            src="{% static 'images/covid.png' %}"
+            alt=""
+          />
+          <p>COVID-19</p>
+
+        </div>
+      </div>
+    <div class="form">
+    <div class="card p-6">
+
+        <form action="#" method="post" class="form-group">
+            <input class="input" type="number" name="vanNumber" value="1" hidden>
+                {% csrf_token %}
+            <label for="areaNumber" class="text-center form-label">No. of Area</label>
+            <input class="form-control text-center" type="number" name="areaNumber" value="2" id="areaNumber">
+            <br>
+
+            <label for="doseNumber" class="text-center form-label">Single Dose Efficiency</label>
+            <input class="form-control text-center" type="number" name="doseNumber" value="1" id="doseNumber">
+            <br>
+            <label for="manual_data" class="form-check-label text-center">Manual Data</label>
+            <input class="form-check-input mb-3" type="checkbox" name="manual_data" id="manual_data">
+            <br>
+            <input class="btn first" type="submit" value="Next">
+        </form>
+    </div>
+
+    </div>
+
+</header>
+
+    <section>
+    <div class="container">
+  </div>
+   </section>
+
 
     
 {% endblock %}
 
 
 {% block script %}
-<script>
-    
-</script>
 
 
 {% endblock %}

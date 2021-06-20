@@ -1,21 +1,45 @@
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block title %}
-Update Data Form
+Home | Q-Bit Hackathon
 {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+{% endblock css %}
 
 
 {% block body %}
-    <form action="#" method="post">
+<header>
+
+<div class="form">
+    <div class="card">
+        <h1 class="text-center" style="color: white">Enter New Data(Will be added to previous data)</h1>
+        <br>
+    <form action="#" method="post" class="form-group">
     {% csrf_token %}
     {% for i in range %}
-        <label for="dose{{i}}">Add Dose for area{{ i }}</label><input type="number" name="dose{{i}}" value="0" id="dose{{i}}">
-        <p>
-        <label for="area{{i}}">Add Registered people in area{{ i }}</label><input type="number" name="area{{i}}" value="0" id="area{{i}}">
+        <label for="dose{{i}}" class="form-label">Add Dose for area{{ i }}</label><input class="form-control" type="number" name="dose{{i}}" value="0" id="dose{{i}}">
+        <br>
+        <label for="area{{i}}" class="form-label">Add Registered people in area{{ i }}</label><input class="form-control" type="number" name="area{{i}}" value="0" id="area{{i}}">
         <br>
     {% endfor %}
-        <input type="submit" value="Next Round">
+        <input class="btn first" type="submit" value="Next Round">
     </form>
+  </div>
+
+    </div>
+
+</header>
+
+    <section>
+    <div class="container">
+  </div>
+   </section>
+
+
 
 {% endblock %}
