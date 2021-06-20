@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Update Data Form
+{% endblock %}
+
+
+{% block body %}
+    <form action="#" method="post">
+    {% csrf_token %}
+    {% for i in range %}
+        <label for="dose{{i}}">Add Dose for area{{ i }}</label><input type="number" name="dose{{i}}" value="0" id="dose{{i}}">
+        <p>
+        <label for="area{{i}}">Add Registered people in area{{ i }}</label><input type="number" name="area{{i}}" value="0" id="area{{i}}">
+        <br>
+    {% endfor %}
+        <input type="submit" value="Next Round">
+    </form>
+
+{% endblock %}

@@ -24,7 +24,8 @@ def solution(request):
             request.session['remaining'][i] = (int(before[i] - request.session['areas'][i]))
             request.session.modified = True
         request.session['round'] += 1
+        request.session['total_waste'] = sum(request.session['wastage'])
         print('After', request.session['areas'], '\n')
     else:
         pass
-    return sum(request.session['wastage'])
+    return

@@ -48,6 +48,18 @@ def areaForm(request):
     return render(request, 'areaForm.html', context)
 
 
+def update_data(request):
+    context = {}
+    if request.method == 'POST':
+        for i in range(request.session['areaNumber']):
+            request.session['areas'][i] += int(request.POST[f'area{i}'])
+            request.session['doses'][i] += int(request.POST[f'dose{i}'])
+            request.session.modified = True
+        return redirect('final')
+    context['range'] = list(range(request.session['areaNumber']))
+    return render(request, 'updateForm.html', context)
+
+
 def doseForm(request):
     context ={}
     if request.method == 'POST':
@@ -63,7 +75,7 @@ class Final(View):
     @staticmethod
     def get(request):
         context = {}
-        solution(request)
+        context['total_waste'] = solution(request)
         # for i in range(request.session['areaNumber']):
         #     request.session['doses'][i] += randrange(0, 2) * request.session['doseNumber']
         print('Areas:-', request.session['areas'], 'Doses:-', request.session['doses'])
